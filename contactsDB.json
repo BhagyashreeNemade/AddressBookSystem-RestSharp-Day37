@@ -23,6 +23,22 @@
             "phoneNumber": "9090809090",
             "email": "bum@rah.com",
             "contactType": "Bowler"
+        },
+        {
+            "name": "ABD",
+            "address": "RSA",
+            "phoneNumber": "999-888-999-888",
+            "email": "Ab@devilers.com",
+            "contactType": "Keeper-Batsman",
+            "id": 12
+        },
+        {
+            "name": "Stokes",
+            "address": "England",
+            "phoneNumber": "989-888-999-888",
+            "email": "ben@stokes.com",
+            "contactType": "All-Rounder",
+            "id": 13
         }
     ]
 }
