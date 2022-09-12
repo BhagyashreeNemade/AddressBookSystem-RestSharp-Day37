@@ -1,0 +1,36 @@
+{
+    "contacts": [
+        {
+            "id": 1,
+            "name": "Rohit",
+            "address": "Mumbai",
+            "phoneNumber": "9090909090",
+            "email": "ro@hit.com",
+            "contactType": "Batsman"
+        },
+        {
+            "id": 5,
+            "name": "Dhawan",
+            "address": "Delhi",
+            "phoneNumber": "8090909090",
+            "email": "sik@har.com",
+            "contactType": "Batsman"
+        },
+        {
+            "name": "ABD",
+            "address": "RSA",
+            "phoneNumber": "999-888-999-888",
+            "email": "Ab@devilers.com",
+            "contactType": "Keeper-Batsman",
+            "id": 12
+        },
+        {
+            "name": "Stokes",
+            "address": "England",
+            "phoneNumber": "989-888-999-888",
+            "email": "ben@stokes.com",
+            "contactType": "All-Rounder",
+            "id": 13
+        }
+    ]
+}
