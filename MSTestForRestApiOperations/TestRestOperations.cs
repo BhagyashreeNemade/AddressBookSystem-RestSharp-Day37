@@ -20,22 +20,18 @@ namespace MSTestForRestApiOperations
         }
 
         /// <summary>
-        /// UC24
-        /// Tests the update data using put operation.
+        /// UC25
+        /// Tests the delete data using delete operation.
         /// </summary>
         [TestMethod]
-        public void TestUpdateDataUsingPutOperation()
+        public void TestDeleteDataUsingDeleteOperation()
         {
-            RestRequest request = new RestRequest("contacts/11", Method.PUT);
-            JObject jobject = new JObject();
-            jobject.Add("name", "Jasprit");
-            jobject.Add("contactType", "Fast-Bowler");
-            request.AddParameter("application/json", jobject, ParameterType.RequestBody);
+            //Arrange
+            RestRequest request = new RestRequest("contacts/11", Method.DELETE);
+            //Act
             IRestResponse response = client.Execute(request);
-            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
-            ContactInfo dataResponse = JsonConvert.DeserializeObject<ContactInfo>(response.Content);
-            Assert.AreEqual(dataResponse.name, "Jasprit");
-            Assert.AreEqual(dataResponse.contactType, "Fast-Bowler");
+            //Assert
+            Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.OK);
         }
     }
 }

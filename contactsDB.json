@@ -17,11 +17,6 @@
             "contactType": "Batsman"
         },
         {
-            "name": "Jasprit",
-            "contactType": "Fast-Bowler",
-            "id": 11
-        },
-        {
             "name": "ABD",
             "address": "RSA",
             "phoneNumber": "999-888-999-888",
