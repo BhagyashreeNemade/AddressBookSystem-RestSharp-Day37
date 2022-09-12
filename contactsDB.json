@@ -17,12 +17,9 @@
             "contactType": "Batsman"
         },
         {
-            "id": 11,
-            "name": "Bumrah",
-            "address": "Mumbai",
-            "phoneNumber": "9090809090",
-            "email": "bum@rah.com",
-            "contactType": "Bowler"
+            "name": "Jasprit",
+            "contactType": "Fast-Bowler",
+            "id": 11
         },
         {
             "name": "ABD",

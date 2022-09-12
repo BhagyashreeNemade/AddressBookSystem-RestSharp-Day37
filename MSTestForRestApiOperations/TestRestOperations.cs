@@ -20,33 +20,22 @@ namespace MSTestForRestApiOperations
         }
 
         /// <summary>
-        /// UC23
-        /// Tests the add multiple entries using post operation.
+        /// UC24
+        /// Tests the update data using put operation.
         /// </summary>
         [TestMethod]
-        public void TestAddMultipleEntriesUsingPostOperation()
+        public void TestUpdateDataUsingPutOperation()
         {
-            //adding multiple employees to table
-            List<ContactInfo> contactList = new List<ContactInfo>();
-            contactList.Add(new ContactInfo { name = "ABD", address = "RSA", phoneNumber = "999-888-999-888", email = "Ab@devilers.com", contactType = "Keeper-Batsman" });
-            contactList.Add(new ContactInfo { name = "Stokes", address = "England", phoneNumber = "989-888-999-888", email = "ben@stokes.com", contactType = "All-Rounder" });
-            foreach (ContactInfo contact in contactList)
-            {
-                RestRequest request = new RestRequest("/contacts", Method.POST);
-                JObject jObject = new JObject();
-                jObject.Add("name", contact.name);
-                jObject.Add("address", contact.address);
-                jObject.Add("phoneNumber", contact.phoneNumber);
-                jObject.Add("email", contact.email);
-                jObject.Add("contactType", contact.contactType);
-                request.AddParameter("application/json", jObject, ParameterType.RequestBody);
-                IRestResponse response = client.Execute(request);
-                //Assert
-                Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
-                //derserializing object for assert and checking test case
-                ContactInfo dataResponse = JsonConvert.DeserializeObject<ContactInfo>(response.Content);
-                Assert.AreEqual(contact.name, dataResponse.name);
-            }
+            RestRequest request = new RestRequest("contacts/11", Method.PUT);
+            JObject jobject = new JObject();
+            jobject.Add("name", "Jasprit");
+            jobject.Add("contactType", "Fast-Bowler");
+            request.AddParameter("application/json", jobject, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+            ContactInfo dataResponse = JsonConvert.DeserializeObject<ContactInfo>(response.Content);
+            Assert.AreEqual(dataResponse.name, "Jasprit");
+            Assert.AreEqual(dataResponse.contactType, "Fast-Bowler");
         }
     }
 }
